@@ -146,19 +146,6 @@ function movieStorage(first, second, actors, directors) {
   localStorage.setItem('compareResults', JSON.stringify(recentlyMovies));
 }
 
-// Modal errors
-var dialog = document.querySelector('dialog');
-var showDialogButton = document.querySelector('#show-dialog');
-if (! dialog.showModal) {
- dialogPolyfill.registerDialog(dialog);
-}
-dialog.querySelector('.mdl-button').addEventListener('click', function() {
-   dialog.close();
-   firstMovieTitle.value = '';
-   secondMovieTitle.value = '';
-   firstMovieTitle.select();
-});
-
 // Clear recently searched
 document.querySelector('#clearHistory').addEventListener('click', function(){
   localStorage.clear();
@@ -173,7 +160,9 @@ document.querySelector('#search-form button').addEventListener('click', function
 
   if((firstMov.Response === "False") || (secondMov.Response === "False") || (firstMovieTitle.value == '') || (secondMovieTitle.value == '')) {
     // Validate inputs and response
-    dialog.showModal();
+  alertify
+    .okBtn("Ok i will try again!")
+    .alert("An error occurred. Try enter a different movie");
 
   } else {
 
@@ -186,7 +175,12 @@ document.querySelector('#search-form button').addEventListener('click', function
     secondMovieDirector = splitString(secondMov.Director);
     comparedDirectors = firstMovieDirector.diff(secondMovieDirector);
     displayItems(comparedDirectors, myDirectors);
-    if(comparedDirectors)
+
+    if( (comparedActors.length === 0) && (comparedDirectors.length  === 0) ) {
+      alertify
+        .okBtn("Close")
+        .alert("Not found any common actors and directors");
+    }
 
     firstMovieTitleOriginal = [];
     secondMovieTitleOriginal = [];
@@ -196,6 +190,7 @@ document.querySelector('#search-form button').addEventListener('click', function
     movieStorage(firstMovieTitleOriginal, secondMovieTitleOriginal, comparedActors, comparedDirectors);
     historyTable(recentlyMovies);
 
+    window.location.hash = '#search-form';
     window.location.hash = '#results';
   }
 

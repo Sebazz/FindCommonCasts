@@ -10,7 +10,7 @@ body {
   }
   main {
     position: relative;
-    z-index: 3;
+    z-index: 1;
   }
   .main-content {
     padding: 25px;
@@ -27,7 +27,7 @@ body {
     h4 {
       margin-bottom: 0;
     }
-    form {
+    #search-form {
       .mdl-textfield {
         @media (min-width: 1380px) {
           margin: 0 25px;

@@ -15,17 +15,6 @@
 </head>
 
 <body>
-    <dialog id="dialog" class="mdl-dialog">
-        <h3 class="mdl-dialog__title">Error</h3>
-        <div class="mdl-dialog__content">
-            <p>
-                An error occurred. Try enter a different movie
-            </p>
-        </div>
-        <div class="mdl-dialog__actions">
-            <button type="button" class="mdl-button">Ok, i will try!</button>
-        </div>
-    </dialog>
     <div class="mdl-layout mdl-js-layout">
         <header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600">
             <div class="mdl-layout__header-row">
@@ -38,7 +27,7 @@
                 <div class="content mdl-cell mdl-cell--2-col"></div>
                 <div class="main-content mdl-cell mdl-cell--8-col mdl-color--white mdl-color-text--grey-600">
                     <h3 class="main-content_heading">Type and search the cast of your favorite movies!</h3>
-                    <form id="search-form" action="#">
+                    <form id="search-form" method="post">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="firstMovie">
                             <label class="mdl-textfield__label" for="sample3">First movie</label>
@@ -47,9 +36,9 @@
                             <input class="mdl-textfield__input" type="text" id="secondMovie">
                             <label class="mdl-textfield__label" for="sample3">Second movie</label>
                         </div>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                  Compare <i class="material-icons">&#xE8E4;</i>
-                </button>
+                        <button id="#compareButtons" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button">
+                          Compare <i class="material-icons">&#xE8E4;</i>
+                        </button>
                     </form>
                     <div id="results" class="mdl-grid">
                         <div class="mdl-cell mdl-cell--12-col">
@@ -94,8 +83,7 @@
         </main>
     </div>
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.min.js"></script>
-    
+    <script defer src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.10/dist/js/alertify.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 
