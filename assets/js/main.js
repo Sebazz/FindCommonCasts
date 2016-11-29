@@ -168,8 +168,8 @@ document.querySelector('#clearHistory').addEventListener('click', function(){
 // Action after click compare button!
 document.querySelector('#search-form button').addEventListener('click', function(){
 
-  firstMov = JSON.parse(JSONRequest('http://www.omdbapi.com/?t=' + firstMovieTitle.value + '&y=&plot=short&r=json'));
-  secondMov = JSON.parse(JSONRequest('http://www.omdbapi.com/?t=' + secondMovieTitle.value + '&y=&plot=short&r=json'));
+  firstMov = JSON.parse(JSONRequest('https://www.omdbapi.com/?t=' + firstMovieTitle.value + '&y=&plot=short&r=json'));
+  secondMov = JSON.parse(JSONRequest('https://www.omdbapi.com/?t=' + secondMovieTitle.value + '&y=&plot=short&r=json'));
 
   if((firstMov.Response === "False") || (secondMov.Response === "False") || (firstMovieTitle.value == '') || (secondMovieTitle.value == '')) {
     // Validate inputs and response
