@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+    <title>Find common cast</title>
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout__title">Find Common Cast</span>
+            </div>
+        </header>
+        <div class="mdl-header-background"></div>
+        <main>
+            <div class="mdl-grid">
+                <div class="content mdl-cell mdl-cell--2-col"></div>
+                <div class="main-content mdl-cell mdl-cell--8-col mdl-color--white mdl-color-text--grey-600">
+                    <h3 class="main-content_heading">Type and search the cast of your favorite movies!</h3>
+                    <form id="search-form" action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="firstMovie">
+                            <label class="mdl-textfield__label" for="sample3">First movie</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="secondMovie">
+                            <label class="mdl-textfield__label" for="sample3">Second movie</label>
+                        </div>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                  Compare <i class="material-icons">&#xE8E4;</i>
+                </button>
+                    </form>
+                    <div id="results" class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <h4>Results</h4>
+                        </div>
+                    </div>
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <h5>Common actors</h5>
+                            <hr />
+                            <ul id="commonActors" class="mdl-list"></ul>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <h5>Common director</h5>
+                            <hr />
+                            <ul id="commonDirectors" class="mdl-list"></ul>
+                        </div>
+                    </div>
+                    <div class="mdl-cell--12-col">
+                        <h3>Recently searched</h3>
+                        <hr />
+                        <button id="clearHistory" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                            Clear search history <i class="material-icons">&#xE16C;</i>
+                        </button>
+                        <div class="rwd-table">
+                            <table id="moviesHistory" class="mdl-data-table mdl-shadow--2dp">
+                                <thead>
+                                    <tr>
+                                        <th class="mdl-data-table__cell--non-numeric">First movie title</th>
+                                        <th class="mdl-data-table__cell--non-numeric">Second movie title</th>
+                                        <th class="mdl-data-table__cell--non-numeric">Common cast</th>
+                                        <th class="mdl-data-table__cell--non-numeric">Common director</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    &copy; 2016 Sebastian Ślęczka
+                </div>
+            </div>
+        </main>
+    </div>
+    <dialog id="dialog" class="mdl-dialog">
+        <h3 class="mdl-dialog__title">Error</h3>
+        <div class="mdl-dialog__content">
+            <p>
+                An error occurred. Try enter a different movie
+            </p>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button">Ok, i will try!</button>
+        </div>
+    </dialog>
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
