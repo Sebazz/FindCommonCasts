@@ -149,9 +149,9 @@ function movieStorage(first, second, actors, directors) {
 // Modal errors
 var dialog = document.querySelector('dialog');
 var showDialogButton = document.querySelector('#show-dialog');
-if (! dialog.showModal) {
- dialogPolyfill.registerDialog(dialog);
-}
+// if (! dialog.showModal) {
+//  dialogPolyfill.registerDialog(dialog);
+// }
 dialog.querySelector('.mdl-button').addEventListener('click', function() {
    dialog.close();
    firstMovieTitle.value = '';
